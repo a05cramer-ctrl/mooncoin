@@ -12,7 +12,7 @@ interface SocialIconsProps {
 
 export default function SocialIcons({ className = '' }: SocialIconsProps) {
   const links = [
-    { name: 'X', href: '#', icon: xIcon },
+    { name: 'X', href: 'https://x.com/MoonCoin_Dev', icon: xIcon },
   ]
 
   return (
@@ -21,6 +21,8 @@ export default function SocialIcons({ className = '' }: SocialIconsProps) {
         <a
           key={link.name}
           href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-16 h-16 rounded-full glass glass-hover flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-colors"
           aria-label={link.name}
         >
