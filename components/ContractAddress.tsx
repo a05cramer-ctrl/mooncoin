@@ -3,20 +3,20 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const PLACEHOLDER_ADDRESS = '7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU'
+const CONTRACT_ADDRESS = 'zf2SVUqgMBhQqdtFkVGmfnFm15WNpvXhqDebqNApump'
 
 export default function ContractAddress() {
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(PLACEHOLDER_ADDRESS)
+      await navigator.clipboard.writeText(CONTRACT_ADDRESS)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
       // Fallback for older browsers or non-HTTPS
       const input = document.createElement('input')
-      input.value = PLACEHOLDER_ADDRESS
+      input.value = CONTRACT_ADDRESS
       document.body.appendChild(input)
       input.select()
       document.execCommand('copy')
@@ -34,7 +34,7 @@ export default function ContractAddress() {
       viewport={{ once: true }}
     >
       <span className="text-gray-400 text-sm font-mono truncate flex-1 min-w-0">
-        {PLACEHOLDER_ADDRESS}
+        {CONTRACT_ADDRESS}
       </span>
       <motion.button
         type="button"
